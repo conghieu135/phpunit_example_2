@@ -27,8 +27,8 @@ node{
                         ////
                         String fileContents = new File(pathFile).getText('UTF-8')
 
-                        echo pathFile
-                        echo "${fileContents}"
+                        //echo pathFile
+                        //echo "${fileContents}"
 
                         if(fileContents.contains("Debugger")){
                             echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"

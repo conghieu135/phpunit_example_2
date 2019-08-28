@@ -1,6 +1,6 @@
 <?php
     
 
-    echo "debugger rer werdebugger debugger debugger debugger";
+    echo "debugger rer wer re rew debugger debugger debugger debugger";
 
 ?>
