@@ -5,7 +5,7 @@ node{
         git 'https://github.com/conghieu135/phpunit_example_2.git'
         mvnHome = tool "M3"
     }
-
+    
     stage('Build') {
       //  try{
             def changeLogSets = currentBuild.changeSets
@@ -29,14 +29,17 @@ node{
 
                         if(fileContents.contains("Debugger")){
                             echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"
-
-                            emailext body: 'File is invalid', recipientProviders: [developers()], subject: 'Build source', to: 'conghieu135@gmail.com'
                         }
 
 
                     }
                 }
             }
+
+        stage("Email Notification"){
+            mail bcc: '', body: 'File is invalid', cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
+        }
+
        // }
        // catch (err) {
        //     echo err.getMessage()
