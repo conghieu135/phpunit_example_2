@@ -30,7 +30,7 @@ node{
                         if(fileContents.contains("Debugger")){
                             echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"
 
-                            emailext body: 'File is invalid', subject: 'Build source', to: 'conghieu135@gmail.com'
+                            emailext body: 'File is invalid', recipientProviders: [developers()], subject: 'Build source', to: 'conghieu135@gmail.com'
                         }
 
 
