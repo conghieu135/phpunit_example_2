@@ -27,7 +27,7 @@ node{
                         
                         echo "${fileContents}"
 
-                        assert r ==~ /debugger/, "File content debugger string"
+                        textFinder(/[Debugger]/, pathFile, false, false, true)
 
 
                     }
