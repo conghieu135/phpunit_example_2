@@ -28,7 +28,9 @@ node{
                         //echo "${fileContents}"
 
                         if(fileContents.contains("Debugger")){
-                            echo "${env.WORKSPACE}/${file.path} chứa từ không hợp lệ"
+                            echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"
+
+                            emailext body: 'File is invalid', subject: 'Build source', to: 'conghieu135@gmail.com'
                         }
 
 
