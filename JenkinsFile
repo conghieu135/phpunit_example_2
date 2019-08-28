@@ -5,7 +5,7 @@ node{
         git 'https://github.com/conghieu135/phpunit_example_2.git'
         mvnHome = tool "M3"
     }
-    
+
     stage('Build') {
       //  try{
             def changeLogSets = currentBuild.changeSets
@@ -35,9 +35,6 @@ node{
                     }
                 }
             }
-
-        stage("Email Notification"){
-            mail bcc: '', body: 'File is invalid', cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
         }
 
        // }
@@ -46,8 +43,9 @@ node{
        // }
         
     }
-    
 
+    stage("Email Notification"){
+            mail bcc: '', body: 'File is invalid', cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
 
     
 }
