@@ -27,7 +27,7 @@ node{
                         
                         //echo "${fileContents}"
 
-                        if(fileContents.contain("Debugger")){
+                        if(fileContents.contains("Debugger")){
                             echo "${env.WORKSPACE}/${file.path} chứa từ không hợp lệ"
                         }
 
