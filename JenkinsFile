@@ -24,10 +24,10 @@ node{
 
                         
                         // def content = readFile(pathFile)
-                        ////
+                        echo pathFile
                         String fileContents = new File(pathFile).getText('UTF-8')
 
-                        //echo pathFile
+                        
                         //echo "${fileContents}"
 
                         if(fileContents.contains("Debugger")){
