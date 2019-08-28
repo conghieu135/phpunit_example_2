@@ -18,12 +18,14 @@ node{
                     for (int k = 0; k < files.size(); k++) {
                         def file = files[k]
                         
-                        def pathFile = "${env.WORKSPACE}/${file.path}"
-                        echo pathFile
+                        // def pathFile = "${env.WORKSPACE}/${file.path}"
+                        // echo pathFile
                         
-                        def content = readFile(pathFile)
+                        // def content = readFile(pathFile)
                         
-                        echo "${content}"
+                        String fileContents = new File('/path/to/file').getText('UTF-8')
+                        
+                        echo "${fileContents}"
 
                     }
                 }
