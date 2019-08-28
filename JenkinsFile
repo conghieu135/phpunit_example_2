@@ -21,7 +21,7 @@ node{
                         def file = files[k]
                         
                         def pathFile = "${env.WORKSPACE}/${file.path}"
-                        echo pathFile
+
                         
                         // def content = readFile(pathFile)
                         ////
@@ -34,13 +34,15 @@ node{
                             isInvalidFile = true
                             mailContent += "${env.WORKSPACE}/${file.path} chua tu khong hop le" + '\n'
 
-                            echo mailContent
+                           
                         }
 
 
                     }
                 }
             }
+
+            echo mailContent
         }
 
        // }
