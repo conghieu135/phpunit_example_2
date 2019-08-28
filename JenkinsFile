@@ -1,6 +1,7 @@
 node{
     def mvnHome
-    
+    def isInvalidFile = false
+    def mailContent = ""
     stage('Preparation'){
         git 'https://github.com/conghieu135/phpunit_example_2.git'
         mvnHome = tool "M3"
@@ -29,6 +30,8 @@ node{
 
                         if(fileContents.contains("Debugger")){
                             echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"
+                            isInvalidFile = true
+                            mailContent += "${env.WORKSPACE}/${file.path} chua tu khong hop le" + '\n'
                         }
 
 
@@ -45,7 +48,7 @@ node{
     }
 
     stage("Email Notification"){
-            mail bcc: '', body: 'File is invalid', cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
+            mail bcc: '', body: mailContent, cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
 
     
 }
