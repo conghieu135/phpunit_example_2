@@ -1,0 +1,36 @@
+==========SỬ DỤNG CHO XAMP==========
+
+1. Vào thư mục C:\xampp\htdocs tạo 1 folder project
+
+2. Cài đặt phpUnit
+    2.1. composer require phpunit/phpunit
+    2.2. sau khi tạo xong sẽ có 1 thư mục vendor chứa config, file composer.json để thiết lập cài đặt
+    2.3. chỉnh sửa file json, thêm vào nội dung sau để sau này sử dụng autoload
+        "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "Tests\\": "tests/"
+            }
+        }
+
+3. Tạo file phpunit.xml với nội dung:
+    <?xml version="1.0" encoding="UTF-8"?>
+    <phpunit colors="true"  strict="true" bootstrap="vendor/autoload.php">
+        <testsuites>
+            <testsuite name="Application Test Suite">
+                <directory>./test/</directory>
+            </testsuite>
+        </testsuites>
+    </phpunit>
+
+    Giải thích:
+        - colors: làm cho kết quả test dc bôi màu
+        - <directory>./tests/</directory>: đường dẫn đến các file test
+
+4. Chạy script: composer dump-autoload để tạo autoload
+
+
