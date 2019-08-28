@@ -23,7 +23,7 @@ node{
                         
                         // def content = readFile(pathFile)
                         
-                        String fileContents = new File('/path/to/file').getText('UTF-8')
+                        String fileContents = new File(pathFile).getText('UTF-8')
                         
                         echo "${fileContents}"
 
