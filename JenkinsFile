@@ -26,8 +26,9 @@ node{
                         // def content = readFile(pathFile)
                         ////
                         String fileContents = new File(pathFile).getText('UTF-8')
-                        
-                        //echo "${fileContents}"
+
+                        echo pathFile
+                        echo "${fileContents}"
 
                         if(fileContents.contains("Debugger")){
                             echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"
@@ -42,7 +43,7 @@ node{
                 }
             }
 
-            echo mailContent
+           // echo mailContent
         }
 
        // }
