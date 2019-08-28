@@ -25,9 +25,11 @@ node{
                         ////
                         String fileContents = new File(pathFile).getText('UTF-8')
                         
-                        echo "${fileContents}"
+                        //echo "${fileContents}"
 
-                        textFinder(/[Debugger]/, pathFile, false, false, true)
+                        if(fileContents.contain("Debugger")){
+                            echo "${env.WORKSPACE}/${file.path} chứa từ không hợp lệ"
+                        }
 
 
                     }
