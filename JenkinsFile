@@ -2,6 +2,7 @@ node{
     def mvnHome
     def isInvalidFile = false
     def mailContent = ""
+
     stage('Preparation'){
         git 'https://github.com/conghieu135/phpunit_example_2.git'
         mvnHome = tool "M3"
@@ -32,6 +33,8 @@ node{
                             echo "${env.WORKSPACE}/${file.path} chua tu khong hop le"
                             isInvalidFile = true
                             mailContent += "${env.WORKSPACE}/${file.path} chua tu khong hop le" + '\n'
+
+                            echo mailContent
                         }
 
 
