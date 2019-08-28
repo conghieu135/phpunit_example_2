@@ -51,7 +51,7 @@ node{
     }
 
     stage("Email Notification"){
-            mail bcc: '', body: "${mailContent}", cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
+            mail bcc: '', body: "file khong hop le", cc: '', from: '', replyTo: '', subject: 'Build source', to: 'conghieu135@gmail.com'
 
     
 }
